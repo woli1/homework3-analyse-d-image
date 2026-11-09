@@ -4,7 +4,16 @@
 <meta charset="utf-8">
 <title>TP Détection de contours</title>
 <style>
-body{font-family:Arial,sans-serif;line-height:1.45;margin:42px;color:#222}h1{color:#17365d;border-bottom:2px solid #17365d;padding-bottom:8px}h2{color:#24527a;margin-top:28px}table{border-collapse:collapse;width:100%;margin:12px 0 20px}th,td{border:1px solid #999;padding:6px;text-align:center;font-size:11px}th{background:#d9eaf7}code{background:#eee;padding:2px 4px} .note{background:#fff3cd;padding:10px;border-left:4px solid #e0a800}.page{page-break-before:always}.small{font-size:11px}
+@page{size:A4 landscape;margin:14mm 12mm}
+body{font-family:Arial,sans-serif;line-height:1.45;margin:0;color:#222}
+h1{color:#17365d;border-bottom:2px solid #17365d;padding-bottom:8px}
+h2{color:#24527a;margin-top:28px}
+table{border-collapse:collapse;table-layout:fixed;width:100%;margin:12px 0 20px;page-break-inside:avoid}
+th,td{border:1px solid #999;padding:5px 4px;text-align:center;font-size:9px;overflow-wrap:break-word}
+th{background:#d9eaf7}
+code{background:#eee;padding:2px 4px}
+.note{background:#fff3cd;padding:10px;border-left:4px solid #e0a800}
+.page{page-break-before:always}.small{font-size:11px}
 </style>
 </head>
 <body>
@@ -46,8 +55,7 @@ body{font-family:Arial,sans-serif;line-height:1.45;margin:42px;color:#222}h1{col
 <tr><td>Laplace</td><td>bear</td><td>76100</td><td>2395</td><td>2203</td><td>73897</td><td>192</td><td>0.028876</td><td>0.968607</td><td>0.002517</td></tr>
 <tr><td>Canny</td><td>bear_2</td><td>8039</td><td>5978</td><td>2750</td><td>5289</td><td>3228</td><td>0.244076</td><td>0.469424</td><td>0.286500</td></tr>
 <tr><td>Canny</td><td>basket</td><td>83749</td><td>6938</td><td>6285</td><td>77464</td><td>653</td><td>0.074465</td><td>0.917798</td><td>0.007737</td></tr>
-<tr><td>Canny</td><td>bear</td><td>29075</td><td>2395</td><td>2029</td><td>27046</td><td>366</td><td>0.068918</td><td>0.918651</td><td>0.012432</td></tr>
-</table>
+<tr><td>Canny</td><td>bear</td><td>29075</td><td>2395</td><td>2029</td><td>27046</td><td>366</td><td>0.068918</td><td>0.918651</td><td>0.012432</td></tr></table>
 <h3>Moyenne des trois images</h3>
 <table><tr><th>Détecteur</th><th>P</th><th>TFP</th><th>TFN</th></tr>
 <tr><td>Sobel</td><td>0.098703</td><td>0.844528</td><td>0.056769</td></tr>
@@ -58,7 +66,7 @@ body{font-family:Arial,sans-serif;line-height:1.45;margin:42px;color:#222}h1{col
 <p>Sur cette campagne, Canny obtient la meilleure performance moyenne avec P = 0.129153, devant Sobel (0.098703) et Laplace (0.054672). Canny a aussi le plus faible taux moyen de faux positifs parmi les trois méthodes, même si son taux de faux négatifs reste non nul.</p>
 <p>L'image <code>bear_2</code> donne la meilleure performance individuelle pour Canny (P = 0.244076). L'image <code>basket</code> contient davantage de détails et produit beaucoup de faux positifs pour les trois détecteurs. Cela montre que les seuils ne sont pas universels et dépendent du contraste, de la texture et de la densité des contours.</p>
 <p>Le voisinage 3 × 3 rend la comparaison plus tolérante aux petits décalages de localisation. C'est un avantage pour comparer des contours qui ne sont pas exactement sur le même pixel. En revanche, cette tolérance peut favoriser une détection légèrement déplacée. La correspondance 1-à-1 ajoutée dans le programme limite ce biais.</p>
-<div class="note"><b>Limite à mentionner :</b> les références JPEG peuvent contenir des niveaux de gris intermédiaires ou des artefacts de compression. La binarisation au seuil 127 simplifie la comparaison. Le voisinage 3x3 améliore la tolérance au décalage, mais peut accepter une localisation légèrement différente.</div>
+<div class="note"><b>Limite à mentionner :</b> les références JPEG peuvent contenir des niveaux de gris intermédiaires ou des artefacts de compression. La binarisation au seuil 127 simplifie la comparaison. Le voisinage 3 × 3 améliore la tolérance au décalage, mais peut accepter une localisation légèrement différente.</div>
 
 <h2>6. Conclusion</h2>
 <p>Le programme permet de choisir un détecteur, de régler ses paramètres avec des trackbars, de traiter un lot d'images et d'exporter les mesures. Avec la campagne principale, Canny est le meilleur selon la performance moyenne. Les essais de sensibilité montrent également que Canny atteint P = 0.155480 avec les seuils 80/200. Aucun détecteur ne reproduit intégralement les références : le choix final doit donc tenir compte de la performance, de la localisation visuelle et de la robustesse aux variations de seuil.</p>
