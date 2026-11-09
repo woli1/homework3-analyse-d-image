@@ -1,0 +1,4 @@
+detecteur,image,contours_detectes,contours_reference,contours_corrects,faux_positifs,faux_negatifs,P,TFP,TFN
+Sobel,bear_2.jpg,14407,5978,3212,11195,2766,0.187038,0.651895,0.161067
+Sobel,basket.jpg,133626,6938,6411,127215,527,0.047789,0.948283,0.003928
+Sobel,bear.jpg,35773,2395,2204,33569,191,0.061284,0.933406,0.005311

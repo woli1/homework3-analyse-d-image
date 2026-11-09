@@ -1,0 +1,4 @@
+detecteur,image,contours_detectes,contours_reference,contours_corrects,faux_positifs,faux_negatifs,P,TFP,TFN
+Laplace,bear_2.jpg,33957,5978,3631,30326,2347,0.100017,0.835335,0.064649
+Laplace,basket.jpg,196652,6938,6908,189744,30,0.035123,0.964725,0.000153
+Laplace,bear.jpg,76100,2395,2203,73897,192,0.028876,0.968607,0.002517

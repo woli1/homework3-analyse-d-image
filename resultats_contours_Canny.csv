@@ -1,0 +1,4 @@
+detecteur,image,contours_detectes,contours_reference,contours_corrects,faux_positifs,faux_negatifs,P,TFP,TFN
+Canny,bear_2.jpg,7720,5978,2719,5001,3259,0.247655,0.455506,0.296839
+Canny,basket.jpg,83405,6938,6273,77132,665,0.074616,0.917474,0.007910
+Canny,bear.jpg,28408,2395,2014,26394,381,0.069957,0.916809,0.013234
