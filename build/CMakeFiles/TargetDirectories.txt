@@ -1,3 +1,0 @@
-/home/walid/Documents/tp analyse d'image/homework3/build/CMakeFiles/TP_contours.dir
-/home/walid/Documents/tp analyse d'image/homework3/build/CMakeFiles/edit_cache.dir
-/home/walid/Documents/tp analyse d'image/homework3/build/CMakeFiles/rebuild_cache.dir
